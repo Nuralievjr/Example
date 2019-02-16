@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <title>ToDo</title>
+        <style>
+            .menubar{
+                background-color: black;
+                height: 50px;
+            }
+            .main{
+                position: absolute
+            }
+            p{
+                font-size: 30px;
+            }
+            #adder{
+                overflow: hidden;
+                border-radius: 3px;
+                border: 1px solid gray;
+                padding: 6;
+                width: 500;
+                padding-bottom:8px;
+                padding-top:8px;
+                padding-left:10px;
+                padding-right:10px;
+                margin:6px;
+                
+                
+            }
+            
+            .display
+            {
+                border: 1px solid black;
+                padding: 15px;
+                border-radius: 3px;
+                width: 500px;
+                height: 50px;
+                
+
+            }
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+           #maindiv
+           {
+               
+           }
+        </style>
+    </head>
+    <body>
+        <div class="menubar">
+            <br>
+            <span style="position: absolute; left: 150px;color: grey; font-size: 20px;">ToDo List</span>
+        </div>
+        <div class="main">
+            <p style="position: absolute;left: 400;top:20px; width: 400px">ToDo List<p>
+        </div>
+        <div style="position: absolute;left:465;top:165px;">
+            <form action=""></form>
+                <input id="adder" type="text" placeholder="New Task">
+                <button id="addbut" onclick="get()" style="background-color:rgb(60, 117, 170); border-radius: 5px; color:white; font-size: 14px; padding: 5px; width: 50;height: 35; ">Add</button>
+            </form>
+            <br><br>
+            
+        </div>
+        <div style="position: absolute;left:425;top:250px;">
+                <ul id="list">
+                        
+                </ul>
+        </div>
+        
+
+
+
+        <script>
+            
+            function get()
+            {   
+                
+                var list=document.getElementById("list");
+                var item = document.createElement("li");
+                var div = document.createElement("div");
+                    div.style.border="1px groove rgb(189, 199, 216)";
+                    div.style.borderRadius="2px";
+                    div.style.width="650px"
+                    div.style.padding="17px";
+                
+                
+                var cbox=document.createElement("input");
+                    cbox.type= "checkbox";
+                    
+                    
+                var label = document.createElement("label");
+                
+                    label.innerText=document.getElementById("adder").value;
+                    label.style.position = "absolute";
+                    label.style.left="60px";
+                    label.id="lol";
+                    
+                var del_but = document.createElement("input");
+                    del_but.type="image";
+                    del_but.style.width="18px";
+                    del_but.style.height="18px";
+                    del_but.src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png";
+                    del_but.style.position = "absolute";
+                    del_but.style.left="640px";
+                
+                
+                
+                
+                
+            
+                div.appendChild(cbox);
+                div.appendChild(label);
+                div.appendChild(del_but);
+                item.appendChild(div);
+                list.appendChild(item);
+                
+                
+                del_but.onclick=function f()
+                {
+                    item.remove();
+                }
+                
+                cbox.onclick=function t()
+                {
+                    label.style.textDecoration="line-through";
+                }
+                
+                
+                document.getElementById("adder").value="";
+                
+            };
+                
+                
+            
+            
+            
+           
+        </script>
+    </body>
+</html>

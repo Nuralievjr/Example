@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css"/>
+    <style>
+        html, body{
+        height:100%;
+        }
+        body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        margin:0;
+        font-family: sans-serif;
+        }
+        .overlay{
+        width:100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        
+       
+        }
+        h1{
+        color:#fff;
+        font-size:150px;
+        }
+        h2{
+            color: #fff;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #time{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 90px;
+            color: #fff;
+        }
+        ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+        #adder{
+                
+                width: 500px;
+                height: 30px;
+                margin:6px;
+                background: transparent;
+                border: none;
+                
+                
+            } 
+            input::-webkit-input-placeholder {
+  color: #AAA;
+}   
+    </style>
+  </head>
+  <body style="background-image:url(https://wallimpex.com/data/out/53/dark-backgrounds-4493966.png);">
+    <div class="overlay">
+        <h1 id="time"></h1>
+    </div>
+    <div style="position: absolute;top:150px;left:620px">
+            <h2>Hello,Ablai</h2>
+    </div>
+    <div>
+            <p style="position: absolute;right: 500px;top:220px;color: #fff; font-size: 30px">What do you want to do today?<p>
+    </div>
+    <div style="position: absolute;right:200px;top:320px;width: 800px">
+            <form action=""></form>
+                <input id="adder" type="text" placeholder="New Task">
+                <button id="addbut" onclick="get()" style="background-color:rgb(60, 117, 170); border-radius: 5px; color:white; font-size: 14px; padding: 5px; width: 11%;height: 20%; ">Add</button>
+            </form>
+    <br><br>
+    </div>
+    <div style="position: absolute;left:425;top:250px;">
+            <ul id="list">
+                    
+            </ul>
+    </div>
+    
+
+    <script>
+        function showtime()
+        {
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            var dis=h+':'+m+':'+s;
+            document.getElementById("time").innerHTML=dis;
+        }
+        var token=setInterval(showtime,1000);
+        function get()
+            {   
+                
+                var list=document.getElementById("list");
+                var item = document.createElement("li");
+                var div = document.createElement("div");
+                    div.style.border="1px groove rgb(189, 199, 216)";
+                    div.style.borderRadius="2px";
+                    div.style.width="650px"
+                    div.style.padding="17px";
+                
+                
+                var cbox=document.createElement("input");
+                    cbox.type= "checkbox";
+                    
+                    
+                var label = document.createElement("label");
+                
+                    label.innerText=document.getElementById("adder").value;
+                    label.style.position = "absolute";
+                    label.style.left="60px";
+                    label.id="lol";
+                    
+                var del_but = document.createElement("input");
+                    del_but.type="image";
+                    del_but.style.width="18px";
+                    del_but.style.height="18px";
+                    del_but.src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png";
+                    del_but.style.position = "absolute";
+                    del_but.style.left="640px";
+                
+                
+                
+                
+                
+            
+                div.appendChild(cbox);
+                div.appendChild(label);
+                div.appendChild(del_but);
+                item.appendChild(div);
+                list.appendChild(item);
+                
+                
+                del_but.onclick=function f()
+                {
+                    item.remove();
+                }
+                
+                cbox.onclick=function t()
+                {
+                    label.style.textDecoration="line-through";
+                }
+                
+                
+                document.getElementById("adder").value="";
+            }
+    </script>
+  </body>
+</html>
