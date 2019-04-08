@@ -1,10 +1,8 @@
 {
     "name": "MyChromeExtension",
     "version": "1.0",
-    "permissions": ["storage"],
     "chrome_url_overrides" : {
        "newtab": "index.html"
      },
-    "manifest_version": 2,
-    "content_security_policy": "script-src 'self' https://code.jquery.com; object-src 'self'"
+    "manifest_version": 2
   }

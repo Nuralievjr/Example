@@ -50,16 +50,18 @@
                 height: 30px;
                 margin:6px;
                 background: transparent;
-                border: none;
+                border: 1px solid white;
+                border-radius: 4px;
+                color: white;
                 
                 
             } 
             input::-webkit-input-placeholder {
-  color: #AAA;
-}   
+            color: white;
+            }   
     </style>
   </head>
-  <body style="background-image:url(https://wallimpex.com/data/out/53/dark-backgrounds-4493966.png);">
+  <body style="background-image:url(/Users/macbook/Desktop/apps.56149.13510798887023509.52cb7b9d-27cf-417d-b33e-e4e758263928.jpeg );">
     <div class="overlay">
         <h1 id="time"></h1>
     </div>
@@ -69,14 +71,14 @@
     <div>
             <p style="position: absolute;right: 500px;top:220px;color: #fff; font-size: 30px">What do you want to do today?<p>
     </div>
-    <div style="position: absolute;right:200px;top:320px;width: 800px">
+    <div style="position: absolute;right:200px;top:320px;width: 800px;height: 600px;">
             <form action=""></form>
-                <input id="adder" type="text" placeholder="New Task">
-                <button id="addbut" onclick="get()" style="background-color:rgb(60, 117, 170); border-radius: 5px; color:white; font-size: 14px; padding: 5px; width: 11%;height: 20%; ">Add</button>
+                <input id="adder" type="text" placeholder="   New Task">
+                <button id="addbut" onclick="get()" style="background-color:rgb(60, 117, 170); border-radius: 5px; color:white; font-size: 14px; padding: 5px; width: 11%;height: 60; ">Add</button>
             </form>
     <br><br>
     </div>
-    <div style="position: absolute;left:425;top:250px;">
+    <div style="position: absolute;right:360px;top:390px;">
             <ul id="list">
                     
             </ul>
@@ -116,6 +118,7 @@
                     label.style.position = "absolute";
                     label.style.left="60px";
                     label.id="lol";
+                    label.style.color="white";
                     
                 var del_but = document.createElement("input");
                     del_but.type="image";
@@ -145,6 +148,7 @@
                 cbox.onclick=function t()
                 {
                     label.style.textDecoration="line-through";
+                    label.style.color="red";
                 }
                 
                 
