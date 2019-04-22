@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
 
   }
 
-  getTasks(t_ls: ITaskList[])
+  getTasks(t_ls: ITaskList)
   {
     this.provider.getTasks(t_ls).then(res => {this.tasks = res;});
 
