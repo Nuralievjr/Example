@@ -1,0 +1,40 @@
+
+    <ng-container *ngIf="!logged">
+    <div class="cntr">
+      <div><input id="email" type="text" class="form-control" name="email" placeholder="username" [(ngModel)]="login"></div><br>
+      <div><input id="password" type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="password "></div><br>
+      <div><button class="btn btn-info btn-block my-4" (click)="auth()">Log in</button></div><br>
+    </div>
+    </ng-container>
+
+
+
+
+    <ng-container *ngIf="logged">
+      <div style="position:absolute;top:15%;left:6%">
+        <p style="font-family: 'Ubuntu Condensed', sans-serif;">List:</p>
+
+        <div>
+          <div *ngFor="let tl of t_ls" class="flx">
+            <div class=pad><span (click)="getTasks(tl)"><input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="tl.name"></span></div>
+            <div class=pad><button class="btn btn-danger" (click)="deleteTaskList(tl)"> Delete</button></div>
+            <div class=pad><button class="btn btn-warning" (click)="updateTaskList(tl)"> Update</button></div>
+          </div><br>
+          <div class="norm">
+            <div class="norm"><input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="name" style="width:185px;"></div>
+            <div class="norm"><button  style="width:100px;" class="btn btn-primary" (click)="createTaskList()">Create</button></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="position:absolute;left:50%; top:15%;">
+        <p style="position:relative;left:10%;top:15%;font-family: 'Ubuntu Condensed', sans-serif;">Tasks:</p>
+
+        <div *ngFor="let t of tasks" class="flx" style="position:relative;left:20%;">
+          <input type="text" id="materialLoginFormEmail" class="form-control" [(ngModel)]="t._name">
+        </div><br>
+
+      </div>
+    </ng-container>
+
